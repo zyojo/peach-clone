@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   
   root to: "tickets#index"
 
-  namespace :admins do
-    root to: "reservations#index"
-  end
+  get "admins", to: "admins/reservations#index", as: :admin_root
+  
 end
