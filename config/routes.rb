@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
   devise_for :admins
+  
+  root to: "tickets#index"
 
   namespace :admins do
-    resources :reservations, only: [:index]
+    root to: "reservations#index"
   end
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  root to: "admins/reservations#index"
-
 end
