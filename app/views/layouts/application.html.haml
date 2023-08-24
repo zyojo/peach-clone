@@ -1,0 +1,9 @@
+!!!
+%html
+  = render 'layouts/head', title: 'PeachClone'
+  %body
+    = yield
+    - if flash.any?
+      .fixed.bottom-8.left-4.py-2.px-8.rounded.bg-slate-300
+        - flash.each do |_, message|
+          %p.py-2= message
