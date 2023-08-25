@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :admins
+  
+  root to: "tickets#index"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "admins", to: "admins/reservations#index", as: :admin_root # ログイン後に遷移するためにasオプションを追加
+  
 end
